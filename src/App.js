@@ -24,15 +24,14 @@ export default function App() {
   const [isListEmpty, setisListEmpty] = useState(false);
 
   let status;
-
-  function handleClick() {
-    setItemsList([]);
-    setisListEmpty(true);
+  console.log(itemsList.filter(item => item.isDone))
+  function handleRemoveCompleted() {
+    setItemsList(itemsList.filter(item => !item.isDone))
+    if(itemsList.filter(item => item.isDone).length === itemsList.length) setisListEmpty(true)
   }
 
   function handleItemClick(index) {
     const newItemsList = itemsList.slice();
-    console.log(newItemsList[index]);
     newItemsList[index].isDone = !newItemsList[index].isDone;
     setItemsList(newItemsList)
   }
@@ -48,7 +47,7 @@ export default function App() {
         <ToDoList ToDoItemsList={itemsList} onItemClicked={handleItemClick} />
       </div>
       <hr />
-      <button onClick={handleClick}> Empty </button>
+      <button onClick={handleRemoveCompleted}> Remove Completed </button>
     </div>
   );
 }
