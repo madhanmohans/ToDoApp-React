@@ -1,5 +1,11 @@
-export default function ToDoList() {
+import ToDoItem from "./ToDoItem"
+
+export default function ToDoList({ToDoItemsList}) {
     return (
-        <p>Nothing to do buddy. Sleep!!</p>
+        <>
+            {ToDoItemsList.map((item) => (
+                <ToDoItem item={item} key={item}/>
+            ))}
+        </>
     )
 }
