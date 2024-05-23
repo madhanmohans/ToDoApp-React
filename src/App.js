@@ -1,7 +1,8 @@
 import "./styles.css";
 import Header from "./components/Header";
 import ToDoList from "./components/ToDoList";
-import { useState, useTransition } from "react";
+import Form from "./components/Form";
+import { useState } from "react";
 
 export default function App() {
 
@@ -36,6 +37,10 @@ export default function App() {
     setItemsList(newItemsList)
   }
 
+  function handleAddTask(newTask) {
+    setItemsList([...itemsList, { text: newTask, isDone: false}]);
+  }
+
   if(isListEmpty) status = "Nothing to do buddy. Sleep!";
 
   return (
@@ -43,6 +48,7 @@ export default function App() {
       <Header />
       <hr />
       <span><i> {status} </i></span>
+      <Form onAddTask={handleAddTask}/>
       <div className="List"> 
         <ToDoList ToDoItemsList={itemsList} onItemClicked={handleItemClick} />
       </div>
