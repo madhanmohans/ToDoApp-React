@@ -1,4 +1,8 @@
 .Application {
-  font-family: sans-serif;
+  font-family: monospace;
   text-align: center;
+}
+
+.List {
+  text-align: left;
 }
