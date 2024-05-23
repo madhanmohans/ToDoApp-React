@@ -1,16 +1,9 @@
-import { useState } from "react"
-
-export default function ToDoItem({item}) {
-    const [isItemDone, setItemDone] = useState(false);
-
-    function handleClick() {
-        setItemDone(!isItemDone);
-    }
-
+export default function ToDoItem({item, index, onItemClicked}) {
+    
     return (
-        <li onClick={ handleClick } style={ { cursor: 'pointer'}}>
+        <li onClick={ () => onItemClicked(index) } style={ { cursor: 'pointer'}}>
             {
-                isItemDone? <s> {item} </s> : item
+                item.isDone? <s> {item.text} </s> : item.text
             }
         </li>
     )

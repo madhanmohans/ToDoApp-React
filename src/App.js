@@ -5,7 +5,22 @@ import { useState, useTransition } from "react";
 
 export default function App() {
 
-  const [itemsList, setItemsList] = useState(["Read SpringBoot", "Complete assignments", "Prepare breakfast", "Sleep for 2 hours", "Take a shower"]);
+  const [itemsList, setItemsList] = useState([
+    {text: "Read SpringBoot", isDone: false},
+    {text: "Complete assignments", isDone: false}, 
+    {text: "Prepare breakfast", isDone: false}, 
+    {text: "Sleep for 2 hours", isDone: false}, 
+    {text: "Take a shower", isDone: false}
+  ]);
+
+  /* 
+    0: { text: 'Read SpringBoot', isDone: false }
+    1: { text: 'Complete assignments', isDone: false }
+    2: { text: 'Prepare breakfast', isDone: false }
+    3: { text: 'Sleep for 2 hours', isDone: false }
+    4: { text: 'Take a shower', isDone: false }
+  */
+
   const [isListEmpty, setisListEmpty] = useState(false);
 
   let status;
@@ -15,16 +30,22 @@ export default function App() {
     setisListEmpty(true);
   }
 
+  function handleItemClick(index) {
+    const newItemsList = itemsList.slice();
+    console.log(newItemsList[index]);
+    newItemsList[index].isDone = !newItemsList[index].isDone;
+    setItemsList(newItemsList)
+  }
+
   if(isListEmpty) status = "Nothing to do buddy. Sleep!";
 
   return (
     <div className="Application">
-      {console.log(itemsList)}
       <Header />
       <hr />
       <span><i> {status} </i></span>
       <div className="List"> 
-        <ToDoList ToDoItemsList={itemsList} />
+        <ToDoList ToDoItemsList={itemsList} onItemClicked={handleItemClick} />
       </div>
       <hr />
       <button onClick={handleClick}> Empty </button>

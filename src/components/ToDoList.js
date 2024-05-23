@@ -1,10 +1,15 @@
 import ToDoItem from "./ToDoItem"
 
-export default function ToDoList({ToDoItemsList}) {
+export default function ToDoList({ToDoItemsList, onItemClicked}) {
     return (
         <>
-            {ToDoItemsList.map((item) => (
-                <ToDoItem item={item} key={item}/>
+            {ToDoItemsList.map((item, index) => (
+                <ToDoItem 
+                    item={item} 
+                    key={index}
+                    index={index}
+                    onItemClicked={onItemClicked}
+                />
             ))}
         </>
     )
