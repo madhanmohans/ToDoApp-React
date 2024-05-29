@@ -9,6 +9,7 @@ body {
   background-image: url(".\\media\\pixel-art-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #033011;
 }
 
 .list-container {
