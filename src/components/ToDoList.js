@@ -1,6 +1,6 @@
 import ToDoItem from "./ToDoItem"
 
-export default function ToDoList({ToDoItemsList, onItemClicked}) {
+export default function ToDoList({ToDoItemsList, onItemClicked, onDeleteTask}) {
     return (
         <ul className="todo-list">
             {ToDoItemsList.map((item, index) => (
@@ -9,6 +9,7 @@ export default function ToDoList({ToDoItemsList, onItemClicked}) {
                     key={index}
                     index={index}
                     onItemClicked={onItemClicked}
+                    onDeleteTask={onDeleteTask}
                 />
             ))}
         </ul>

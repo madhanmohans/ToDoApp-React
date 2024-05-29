@@ -27,16 +27,31 @@ body {
 .todo-list {
   list-style-type: none;
   padding: 0;
+  padding-right: 35%;
 }
 
 .todo-item {
   padding: 10px;
-  border-bottom: 1px solid aliceblue;
   cursor: pointer;
 }
 
 .todo-item:hover span {
   text-decoration: line-through;
+}
+
+.delete-button {
+  font-size: 150%;
+}
+
+.delete-button:hover {
+  color: #f86565;
+}
+
+.todo-item-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid aliceblue;
+  align-items: center;
 }
 
 .remove-completed {
