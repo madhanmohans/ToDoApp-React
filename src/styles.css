@@ -67,12 +67,12 @@ body {
 
 .add-task-button {
   padding: 10px 20px;
-  background-color: rgb(77, 76, 76);
+  background-color: rgb(98, 165, 123);
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .add-task-button:hover {
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(85, 139, 105);
 }
