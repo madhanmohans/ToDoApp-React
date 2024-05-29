@@ -46,13 +46,11 @@ export default function App() {
   return (
     <div className="Application">
       <Header />
-      <hr />
-      <span><i> {status} </i></span>
+      <span className="status"><i> {status} </i></span>
       <Form onAddTask={handleAddTask}/>
       <div className="list-container"> 
         <ToDoList ToDoItemsList={itemsList} onItemClicked={handleItemClick} />
       </div>
-      <hr />
       <button className="remove-completed" onClick={handleRemoveCompleted}> Remove Completed </button>
     </div>
   );
