@@ -19,7 +19,7 @@ body {
   margin: 20px 0;
 }
 
-.header {
+.header, .status {
   color: aliceblue;
 }
 
