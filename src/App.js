@@ -49,11 +49,11 @@ export default function App() {
       <hr />
       <span><i> {status} </i></span>
       <Form onAddTask={handleAddTask}/>
-      <div className="List"> 
+      <div className="list-container"> 
         <ToDoList ToDoItemsList={itemsList} onItemClicked={handleItemClick} />
       </div>
       <hr />
-      <button onClick={handleRemoveCompleted}> Remove Completed </button>
+      <button className="remove-completed" onClick={handleRemoveCompleted}> Remove Completed </button>
     </div>
   );
 }

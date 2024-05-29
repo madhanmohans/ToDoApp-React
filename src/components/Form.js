@@ -12,14 +12,15 @@ export default function Form({onAddTask}) {
         }
     }
     return(
-        <>
+        <div className="form-container">
             <input
+                className="new-task-input"
                 type="text"
                 value={newTask}
                 onChange={(e) => setNewTask(e.target.value)}
                 placeholder="New Task"
                 />
-            <button onClick={handleAddTask}>Add Task</button>
-        </>
+            <button className="add-task-button" onClick={handleAddTask}>Add Task</button>
+        </div>
     )   
 }
