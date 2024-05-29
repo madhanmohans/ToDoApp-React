@@ -1,14 +1,26 @@
 .Application {  
   font-family: monospace;
   max-width: 1000px;
+  padding: 100px;
   margin: 0 auto;
 }
 
+body {
+  background-image: url(".\\media\\pixel-art.bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .list-container {
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin: 20px 0;
+}
+
+.header {
+  color: aliceblue;
 }
 
 .todo-list {
@@ -18,7 +30,7 @@
 
 .todo-item {
   padding: 10px;
-  border-bottom: 1px solid #2b2b2b;
+  border-bottom: 1px solid aliceblue;
   cursor: pointer;
 }
 
@@ -31,14 +43,14 @@
   align-items: flex-start;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #f44336;
+  background-color: #0e5724;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 .remove-completed:hover {
-  background-color: #d32f2f;
+  background-color: #0a441c;
 }
 
 .form-container {
@@ -55,12 +67,12 @@
 
 .add-task-button {
   padding: 10px 20px;
-  background-color: cornflowerblue;
+  background-color: rgb(77, 76, 76);
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .add-task-button:hover {
-  background-color: rgb(8, 85, 228);
+  background-color: rgb(31, 31, 31);
 }
